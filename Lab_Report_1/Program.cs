@@ -5,11 +5,9 @@ namespace StudentManagementSystem
     // Student Class
     class Student
     {
-        // Properties
         public int Id { get; set; }
         public string Name { get; set; }
         public double Marks { get; set; }
-
         // Parameterized Constructor
         public Student(int id, string name, double marks)
         {
@@ -17,13 +15,9 @@ namespace StudentManagementSystem
             Name = name;
             Marks = marks;
         }
-
-        // Method to Display Student Information
         public void DisplayStudentInfo()
         {
             string result;
-
-            // Determine Pass or Fail
             if (Marks >= 40)
             {
                 result = "Passed";
@@ -32,7 +26,6 @@ namespace StudentManagementSystem
             {
                 result = "Failed";
             }
-
             // Display Student Information
             Console.WriteLine("\n----- Student Information -----");
             Console.WriteLine($"Student ID   : {Id}");
@@ -41,32 +34,24 @@ namespace StudentManagementSystem
             Console.WriteLine($"Result       : {result}");
         }
     }
-
     class Program
     {
         static void Main(string[] args)
         {
-            // Variables
             int id;
             string name;
             double marks;
-
             // User Input
             Console.Write("Enter Student ID: ");
             id = Convert.ToInt32(Console.ReadLine());
-
             Console.Write("Enter Student Name: ");
             name = Console.ReadLine();
-
             Console.Write("Enter Student Marks: ");
             marks = Convert.ToDouble(Console.ReadLine());
-
             // Create Student Object using Parameterized Constructor
             Student student = new Student(id, name, marks);
-
             // Display Student Information
             student.DisplayStudentInfo();
-
             Console.WriteLine("\nPress any key to exit...");
             Console.ReadKey();
         }
