@@ -1,34 +1,31 @@
 ﻿using System;
+using Internal;
 
 class Student
 {
     // Properties
-    public int Id { get; set; }
+    public int StudentID { get; set; }
     public string Name { get; set; }
     public double Marks { get; set; }
 
-    // Parameterized constructor
-    public Student(int id, string name, double marks)
+    // Parameterized Constructor
+    public Student(int studentID, string name, double marks)
     {
-        Id = id;
+        StudentID = studentID;
         Name = name;
         Marks = marks;
     }
 
-    // Method to determine pass/fail using an operator
-    public string GetResult()
+    // Display Student Information
+    public void Display()
     {
-        return (Marks >= 40) ? "Passed" : "Failed";
-    }
+        string result = (Marks >= 40) ? "Passed" : "Failed";
 
-    // Method to display student information
-    public void DisplayInfo()
-    {
-        Console.WriteLine("\n--- Student Information ---");
-        Console.WriteLine("ID     : " + Id);
-        Console.WriteLine("Name   : " + Name);
-        Console.WriteLine("Marks  : " + Marks);
-        Console.WriteLine("Result : " + GetResult());
+        Console.WriteLine("\n----- Student Information -----");
+        Console.WriteLine("Student ID : " + StudentID);
+        Console.WriteLine("Name       : " + Name);
+        Console.WriteLine("Marks      : " + Marks);
+        Console.WriteLine("Result     : " + result);
     }
 }
 
@@ -36,23 +33,21 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("=== Student Management System ===");
-
         Console.Write("Enter Student ID: ");
         int id = Convert.ToInt32(Console.ReadLine());
 
         Console.Write("Enter Student Name: ");
         string name = Console.ReadLine();
 
-        Console.Write("Enter Student Marks: ");
+        Console.Write("Enter Marks: ");
         double marks = Convert.ToDouble(Console.ReadLine());
 
-        // Object created using parameterized constructor
+        // Create object using parameterized constructor
         Student student = new Student(id, name, marks);
 
-        student.DisplayInfo();
+        // Display details
+        student.Display();
 
-        Console.WriteLine("\nPress any key to exit...");
         Console.ReadKey();
     }
 }
