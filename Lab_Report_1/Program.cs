@@ -5,7 +5,6 @@ namespace StudentManagementSystem
     // Student Class
     class Student
     {
-        // Properties
         public int Id { get; set; }
         public string Name { get; set; }
         public double Marks { get; set; }
@@ -17,13 +16,11 @@ namespace StudentManagementSystem
             Name = name;
             Marks = marks;
         }
-
-        // Method to Display Student Information
         public void DisplayStudentInfo()
         {
             string result;
 
-            // Determine Pass or Fail
+           
             if (Marks >= 40)
             {
                 result = "Passed";
@@ -46,7 +43,6 @@ namespace StudentManagementSystem
     {
         static void Main(string[] args)
         {
-            // Variables
             int id;
             string name;
             double marks;
