@@ -1,58 +1,72 @@
 ﻿using System;
 
-class Student
+namespace StudentManagementSystem
 {
-    // Properties
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public double Marks { get; set; }
-
-    // Parameterized constructor
-    public Student(int id, string name, double marks)
+    class Student
     {
-        Id = id;
-        Name = name;
-        Marks = marks;
+        // Properties
+        public int StudentID { get; set; }
+        public string Name { get; set; }
+        public double Marks { get; set; }
+
+        // Parameterized Constructor
+        public Student(int studentID, string name, double marks)
+        {
+            StudentID = studentID;
+            Name = name;
+            Marks = marks;
+        }
+
+        // Method to check pass/fail
+        public string CheckResult()
+        {
+            if (Marks >= 40)
+            {
+                return "Passed";
+            }
+            else
+            {
+                return "Failed";
+            }
+        }
+
+        // Method to display student information
+        public void DisplayStudentInfo()
+        {
+            Console.WriteLine("\n--- Student Information ---");
+            Console.WriteLine("Student ID : " + StudentID);
+            Console.WriteLine("Name       : " + Name);
+            Console.WriteLine("Marks      : " + Marks);
+            Console.WriteLine("Result     : " + CheckResult());
+        }
     }
 
-    // Method to determine pass/fail using an operator
-    public string GetResult()
+    class Program
     {
-        return (Marks >= 40) ? "Passed" : "Failed";
-    }
+        static void Main(string[] args)
+        {
+            // Variables
+            int id;
+            string name;
+            double marks;
 
-    // Method to display student information
-    public void DisplayInfo()
-    {
-        Console.WriteLine("\n--- Student Information ---");
-        Console.WriteLine("ID     : " + Id);
-        Console.WriteLine("Name   : " + Name);
-        Console.WriteLine("Marks  : " + Marks);
-        Console.WriteLine("Result : " + GetResult());
-    }
-}
+            // Taking input from user
+            Console.Write("Enter Student ID: ");
+            id = Convert.ToInt32(Console.ReadLine());
 
-class Program
-{
-    static void Main(string[] args)
-    {
-        Console.WriteLine("=== Student Management System ===");
+            Console.Write("Enter Student Name: ");
+            name = Console.ReadLine();
 
-        Console.Write("Enter Student ID: ");
-        int id = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter Student Marks: ");
+            marks = Convert.ToDouble(Console.ReadLine());
 
-        Console.Write("Enter Student Name: ");
-        string name = Console.ReadLine();
+            // Creating object using parameterized constructor
+            Student student = new Student(id, name, marks);
 
-        Console.Write("Enter Student Marks: ");
-        double marks = Convert.ToDouble(Console.ReadLine());
+            // Display student details
+            student.DisplayStudentInfo();
 
-        // Object created using parameterized constructor
-        Student student = new Student(id, name, marks);
-
-        student.DisplayInfo();
-
-        Console.WriteLine("\nPress any key to exit...");
-        Console.ReadKey();
+            Console.ReadLine();
+        }
     }
 }
