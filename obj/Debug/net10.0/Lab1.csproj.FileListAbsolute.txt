@@ -1,0 +1,15 @@
+/home/user/Desktop/6th sem/dotnet/Lab/Lab1/bin/Debug/net10.0/Lab1
+/home/user/Desktop/6th sem/dotnet/Lab/Lab1/bin/Debug/net10.0/Lab1.deps.json
+/home/user/Desktop/6th sem/dotnet/Lab/Lab1/bin/Debug/net10.0/Lab1.runtimeconfig.json
+/home/user/Desktop/6th sem/dotnet/Lab/Lab1/bin/Debug/net10.0/Lab1.dll
+/home/user/Desktop/6th sem/dotnet/Lab/Lab1/bin/Debug/net10.0/Lab1.pdb
+/home/user/Desktop/6th sem/dotnet/Lab/Lab1/obj/Debug/net10.0/Lab1.GeneratedMSBuildEditorConfig.editorconfig
+/home/user/Desktop/6th sem/dotnet/Lab/Lab1/obj/Debug/net10.0/Lab1.AssemblyInfoInputs.cache
+/home/user/Desktop/6th sem/dotnet/Lab/Lab1/obj/Debug/net10.0/Lab1.AssemblyInfo.cs
+/home/user/Desktop/6th sem/dotnet/Lab/Lab1/obj/Debug/net10.0/Lab1.csproj.CoreCompileInputs.cache
+/home/user/Desktop/6th sem/dotnet/Lab/Lab1/obj/Debug/net10.0/Lab1.sourcelink.json
+/home/user/Desktop/6th sem/dotnet/Lab/Lab1/obj/Debug/net10.0/Lab1.dll
+/home/user/Desktop/6th sem/dotnet/Lab/Lab1/obj/Debug/net10.0/refint/Lab1.dll
+/home/user/Desktop/6th sem/dotnet/Lab/Lab1/obj/Debug/net10.0/Lab1.pdb
+/home/user/Desktop/6th sem/dotnet/Lab/Lab1/obj/Debug/net10.0/Lab1.genruntimeconfig.cache
+/home/user/Desktop/6th sem/dotnet/Lab/Lab1/obj/Debug/net10.0/ref/Lab1.dll
