@@ -1,58 +1,59 @@
-﻿using System;
-
-class Student
+﻿namespace Lab1
 {
-    // Properties
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public double Marks { get; set; }
-
-    // Parameterized constructor
-    public Student(int id, string name, double marks)
+    class Student
     {
-        Id = id;
-        Name = name;
-        Marks = marks;
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public double Marks { get; set; }
+
+        public Student(int id, string name, double marks)
+        {
+            Id = id;
+            Name = name;
+            Marks = marks;
+        }
+        public string Status()
+        {
+            return Marks >= 40 ? "Pass" : "Fail";
+        }
+        public void display()
+        {
+            Console.WriteLine($"Id: {Id}\nName: {Name}\nMarks: {Marks}\nStatus: {Status()}\n");
+        }
+
+
     }
-
-    // Method to determine pass/fail using an operator
-    public string GetResult()
+    class Program
     {
-        return (Marks >= 40) ? "Passed" : "Failed";
-    }
+        public static void Main(string[] args)
+        {
+            List<Student> students = new List<Student>();
 
-    // Method to display student information
-    public void DisplayInfo()
-    {
-        Console.WriteLine("\n--- Student Information ---");
-        Console.WriteLine("ID     : " + Id);
-        Console.WriteLine("Name   : " + Name);
-        Console.WriteLine("Marks  : " + Marks);
-        Console.WriteLine("Result : " + GetResult());
-    }
-}
+            Console.WriteLine("Enter the number of students to be inserted:");
+            int count = int.Parse(Console.ReadLine());
 
-class Program
-{
-    static void Main(string[] args)
-    {
-        Console.WriteLine("=== Student Management System ===");
+            for (int i = 0; i < count; i++)
+            {
+                Console.WriteLine($"\nEnter details for Student{i}:");
 
-        Console.Write("Enter Student ID: ");
-        int id = Convert.ToInt32(Console.ReadLine());
+                Console.Write("ID     : ");
+                int id = int.Parse(Console.ReadLine());
 
-        Console.Write("Enter Student Name: ");
-        string name = Console.ReadLine();
+                Console.Write("Name   : ");
+                string name = Console.ReadLine();
 
-        Console.Write("Enter Student Marks: ");
-        double marks = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Marks  : ");
+                double marks = double.Parse(Console.ReadLine());
 
-        // Object created using parameterized constructor
-        Student student = new Student(id, name, marks);
+                students.Add(new Student(id, name, marks));
+            }
 
-        student.DisplayInfo();
+            Console.WriteLine("\nStudent Report: ");
+            foreach (var student in students)
+            {
+                student.display();
 
-        Console.WriteLine("\nPress any key to exit...");
-        Console.ReadKey();
+            }
+        }
     }
 }
